@@ -17,7 +17,7 @@ Usage:
 ```python
 <output_directory>
 ├── lib # LibScout Library detection result, <apk_name>.json
-└── vul # Apk Vulnerability result, <apk_name.json>
+└── vul # Apk Vulnerability result, <apk_name>.json
 ```
 
 **<summary_report.json>** 为所有apk漏洞报告的摘要，提取了存在漏洞的包及漏洞信息，过滤其他没有查询到漏洞的包
