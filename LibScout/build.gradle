@@ -1,0 +1,53 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    provided
+    // Make implementation extend from our provided configuration so that classes from dependencies can be bundled
+    implementation.extendsFrom(provided)
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+dependencies {
+    provided 'commons-io:commons-io:2.6'
+    provided 'commons-cli:commons-cli:1.2'
+    provided 'com.google.code.gson:gson:2.8.0'
+    provided 'com.github.zafarkhaja:java-semver:0.9.0'
+    provided 'ch.qos.logback:logback-classic:1.1.2'
+    provided 'ch.qos.logback:logback-core:1.1.2'
+    provided 'org.slf4j:slf4j-api:1.7.7'
+    provided 'net.consensys.cava:cava-toml:0.5.0'
+    provided 'com.google.guava:guava:27.0.1-jre'
+
+    // WALA and dexlib
+    provided 'com.ibm.wala:com.ibm.wala.core:1.5.1'
+    provided 'com.ibm.wala:com.ibm.wala.dalvik:1.5.1'
+    provided 'com.ibm.wala:com.ibm.wala.shrike:1.5.1'
+    provided 'com.ibm.wala:com.ibm.wala.util:1.5.1'
+    provided 'org.smali:dexlib2:2.2.6'
+
+    provided files('lib/android-xml.jar')  // axml relevant classes from Android SDK
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.infsec.tpl.TplCLI',
+                         'Tool': 'LibScout',
+                      'Version': '2.3.2'
+    }
+
+    // build fat jar
+    from {
+        configurations.provided.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

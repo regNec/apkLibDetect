@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: de.infsec.tpl.TplCLI
+Tool: LibScout
+Version: 2.3.2
+
