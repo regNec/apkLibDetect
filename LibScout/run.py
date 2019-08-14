@@ -10,11 +10,10 @@ import multiprocessing
 
 
 # LibScout config
-PROJ_ROOT = os.path.dirname(os.path.realpath(__file__))
-LIBSCOUT_ROOT = os.path.join(PROJ_ROOT, 'LibScout')
+LIBSCOUT_ROOT = os.path.dirname(os.path.realpath(__file__))
 LIBSCOUT = os.path.join(LIBSCOUT_ROOT, 'build', 'libs', 'LibScout.jar')
 ANDROID_SDK = os.path.join(LIBSCOUT_ROOT, 'android-sdk', 'android-28.jar')
-VUL_JSON = os.path.join(PROJ_ROOT, 'vuls', 'vuls.json')
+VUL_JSON = os.path.join(LIBSCOUT_ROOT, 'vuls', 'vuls.json')
 
 def usage():
     print(sys.argv[0])
