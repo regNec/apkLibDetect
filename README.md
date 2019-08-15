@@ -350,3 +350,8 @@ infodict["references"] = s['vulnerabilities'][i]["references"]
 infodict["title"] = s['vulnerabilities'][i]["title"]
 infodict["from"] = s['vulnerabilities'][i]["from"]
 ```
+
+## 目前存在的问题
+
+* LibScout仅能检测.jar，而不能检测.so等其他语言的三方库，可能需要对LibScout进行进一步的改进
+* snyk现有的漏洞数据库不够全（仅指java语言），仅包含maven仓库，而缺少例如谷歌仓库等其他仓库中第三方库的相关漏洞信息
