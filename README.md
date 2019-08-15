@@ -34,34 +34,34 @@ Usage:
 ```python
 .
 ├── LibScout # Revised LibScout directory
-│   ├── LICENSE # LibScout Lisense
-│   ├── README.md # LibScout README
-│   ├── android-sdk # LibScout requires an android SDK
-│   ├── assets
-│   ├── build
-│   ├── build.gradle
-│   ├── config
-│   ├── data
-│   ├── gradle
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── lib
-│   ├── library # Original Library files (jar or aar), and description file (xml)
-│   ├── profile.sh # generate profiles for libraries
-│   ├── profiles # generated profiles
-│   ├── run.py # RUN THE TOOLCHAIN
-│   ├── scripts # scripts to collect library
-│   ├── src # LibScout Source Code
-│   └── vuls # vulnerability database
+│   ├── LICENSE # LibScout Lisense
+│   ├── README.md # LibScout README
+│   ├── android-sdk # LibScout requires an android SDK
+│   ├── assets
+│   ├── build
+│   ├── build.gradle
+│   ├── config
+│   ├── data
+│   ├── gradle
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── lib
+│   ├── library # Original Library files (jar or aar), and description file (xml)
+│   ├── profile.sh # generate profiles for libraries
+│   ├── profiles # generated profiles
+│   ├── scripts # scripts to collect library
+│   └── src # LibScout Source Code
+└── analyse.py # RUN THE TOOLCHAIN
 └── README.md
-└── vulnerability # generate vulnerability database
+└── VulDB # generate vulnerability database
     ├── example
+    ├── vuls # vulnerability database
     └── vuls.py # generation script
 ```
 
 ## Usage
 
-### Requrements:
+### Requirements:
 
 - Python3 (No third party package needed)
 - Java 1.8 or higher and can be build with Gradle (for LibScout)
