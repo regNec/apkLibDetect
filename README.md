@@ -14,7 +14,7 @@
 
 ```bash
 Usage: 
-	python3 run.py <apk_file_or_directory> <output_directory> <summary_report.json>
+	python3 analyse.py <apk_file_or_directory> <output_directory> <summary_report.json>
 ```
 
 #### Output Structure
