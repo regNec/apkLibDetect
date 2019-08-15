@@ -10,10 +10,12 @@ import multiprocessing
 
 
 # LibScout config
-LIBSCOUT_ROOT = os.path.dirname(os.path.realpath(__file__))
+PROJ_ROOT = os.path.dirname(os.path.realpath(__file__))
+LIBSCOUT_ROOT = os.path.join(PROJ_ROOT, 'LibScout')
 LIBSCOUT = os.path.join(LIBSCOUT_ROOT, 'build', 'libs', 'LibScout.jar')
 ANDROID_SDK = os.path.join(LIBSCOUT_ROOT, 'android-sdk', 'android-28.jar')
-VUL_JSON = os.path.join(LIBSCOUT_ROOT, 'vuls', 'vuls.json')
+LIB_PROFILE = os.path.join(LIBSCOUT_ROOT, 'profiles', 'lib')
+VUL_JSON = os.path.join(PROJ_ROOT, 'VulDB', 'vuls', 'vuls.json')
 
 def usage():
     print(sys.argv[0])
@@ -44,7 +46,7 @@ def run_tool_chain(apk_file: str, output: str, vuls: dict):
     lib_detct_out = os.path.join(output, 'lib')
     lib_detct_json = os.path.join(lib_detct_out, lib_detct_json_name)
     if not os.path.exists(lib_detct_json):
-        run_libscout_cmd = f"java -jar {LIBSCOUT} -o match -p profiles/lib -a {ANDROID_SDK} -j \"{lib_detct_out}\" \"{apk_file}\""
+        run_libscout_cmd = f"java -jar {LIBSCOUT} -o match -p {LIB_PROFILE} -a {ANDROID_SDK} -j \"{lib_detct_out}\" \"{apk_file}\""
         try:
             out_bytes = subprocess.check_output(run_libscout_cmd, shell=True)
         except subprocess.CalledProcessError as e:

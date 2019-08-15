@@ -40,7 +40,6 @@ Usage:
 │   ├── assets
 │   ├── build
 │   ├── build.gradle
-│   ├── config
 │   ├── data
 │   ├── gradle
 │   ├── gradlew
@@ -53,6 +52,7 @@ Usage:
 │   └── src # LibScout Source Code
 └── analyse.py # RUN THE TOOLCHAIN
 └── README.md
+└── config # LibScout config directory
 └── VulDB # generate vulnerability database
     ├── example
     ├── vuls # vulnerability database
