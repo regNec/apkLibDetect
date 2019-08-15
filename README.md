@@ -168,7 +168,7 @@ dependencies {
 
 输出格式为json
 
-此过程可能会出现很多报错，依据报错作出相应的修改，这里说明一下无法解析包的报错
+此过程可能会出现很多报错，依据报错作出相应的修改，这里说明一下无法解析包（example: Could not resolve groupid:artifactid:version）的报错
 
 - 可以通过增加新的仓库或增加`compile`（详见上一模块所述）
 
