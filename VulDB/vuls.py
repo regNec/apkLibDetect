@@ -27,6 +27,6 @@ for fname in files:
             vuldict[package].append(infodict)
 
 vuljs = js.dumps(vuldict)
-vulfile = open('../LibScout/vuls/vuls.json', 'w')
+vulfile = open('./vuls/vuls.json', 'w')
 vulfile.write(vuljs)
 vulfile.close()
