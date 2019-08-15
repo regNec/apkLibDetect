@@ -7,6 +7,11 @@
 
 ## Run
 
+需先build LibScout
+
+> Generate a runnable jar with the gradle wrapper gradlew (Linux/MacOS) or gradlew.bat (Windows), by invoking it with the build task, e.g. ./gradlew build
+> The LibScout.jar is output to the build/libs directory.
+
 ```bash
 Usage: 
 	python3 run.py <apk_file_or_directory> <output_directory> <summary_report.json>
@@ -353,5 +358,6 @@ infodict["from"] = s['vulnerabilities'][i]["from"]
 
 ## 目前存在的问题
 
-* LibScout仅能检测.jar，而不能检测.so等其他语言的三方库，可能需要对LibScout进行进一步的改进
+* LibScout仅能检测.jar或.aar，而不能检测.so等其他的三方库，可能需要对LibScout进行进一步的改进
 * snyk现有的漏洞数据库不够全（仅指java语言），仅包含maven仓库，而缺少例如谷歌仓库等其他仓库中第三方库的相关漏洞信息
+* 目前所含的漏洞信息是整个第三方库包含的漏洞，但实际当第三方库被整合到可执行文件中时，会被strip和dead code elimination。因此，检测出的漏洞可能在实际可执行文件中并不存在
